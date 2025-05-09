@@ -14,11 +14,7 @@ const options = {
     autoMatchOsTheme: true // default: true
 }
 
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
 
-const darkmodeButton = document.body.getElementsByTagName("button")[0];
-const dateSettingsButton = document.getElementById("date-settings");
 
 /* Date settings (UTC) */
 let utcYear = 2024,
@@ -73,27 +69,4 @@ const count = setInterval(() => {
 
 updateDateInformation();
 
-/** Changes the icon of the dark mode button */
-const darkModeButtonChangeIcon = (element, classesToToggle) => {
-    if (element == null || classesToToggle == null) {
-        return;
-    }
-    classesToToggle.forEach(classToToggle => {
-        element.classList.toggle(classToToggle);
-    });
-};
 
-
-const darkmodeButtonClassList = ["text-warning", "text-white", "fa-moon", "fa-sun"];
-
-/** Change icon if dark mode is already active */
-if (document.body.classList.contains("darkmode--activated")) {
-    darkModeButtonChangeIcon(darkmodeButton.children[0], darkmodeButtonClassList);
-    darkModeButtonChangeIcon(dateSettingsButton, ["text-white"]);
-}
-
-/* Event listener for dark mode button */
-darkmodeButton.addEventListener("click", () => {
-    darkModeButtonChangeIcon(darkmodeButton.children[0], darkmodeButtonClassList);
-    darkModeButtonChangeIcon(dateSettingsButton, ["text-white"]);
-});
