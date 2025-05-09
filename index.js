@@ -21,12 +21,12 @@ const darkmodeButton = document.body.getElementsByTagName("button")[0];
 const dateSettingsButton = document.getElementById("date-settings");
 
 /* Date settings (UTC) */
-let utcYear = 2019,
-    utcMonth = 1,
-    utcDay = 1,
-    utcHour = 0,
-    utcMinute = 0,
-    utcSeconds = 0;
+let utcYear = 2024,
+    utcMonth = 12,
+    utcDay = 7,
+    utcHour = 20,
+    utcMinute = 29,
+    utcSeconds = 25;
 
 let countUpDate = new Date(utcYear, utcMonth - 1, utcDay, utcHour, utcMinute, utcSeconds);
 
